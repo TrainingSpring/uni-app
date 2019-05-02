@@ -2,6 +2,7 @@
     <view>
 		<!--pages/my/index.wxml-->
 		<!-- 个人中心 -->
+		
 		<view class="header">
 		    <view class="avatar">
 		        <image src="/static/icon_API_HL.png" />
@@ -13,12 +14,12 @@
 		    <!-- 技术员独有  综合评分 -->
 		    <view class='eval' v-if="userGroup == 1">
 		      <i-cell title="我的评分" />
-		      <view class='rate'>
+		      <view class='rate'> 
 		        <view class="num">综合评分</view>
 		        <view>
 		          <i-rate i-class="reloadSize"
 		            size="20"
-		            :value="starIndex"
+		            :value="rate"
 		            disabled
 		          />
 		        </view>
@@ -58,28 +59,28 @@
 		        <!-- 技术员界面 -->
 		        <view class="box" v-else>
 		            <view class="item">
-		                <navigator open-type="reLaunch" url="/pages/engineerPages/accepted/index?params=accepted">
+		                <view data-params="accepted" @tap="jump">
 		                    <view class="icon"><text class="iconfont icon-quanbudingdan"></text></view>
 		                    <view class="text">全部订单</view>
-		                </navigator>
+		                </view>
 		            </view>
 		            <view class="item">
-		                <navigator  open-type="reLaunch"  url="/pages/engineerPages/accepted/index?params=underway">
+		                <view data-params="underway" @tap="jump">
 		                    <view class="icon"><text class="iconfont icon-weixiu"></text></view>
 		                    <view class="text">进行中</view>
-		                </navigator>
+		                </view>
 		            </view>
 		            <view class="item">
-		                <navigator open-type="reLaunch"  url="/pages/engineerPages/accepted/index?params=waitPay">
+		                <view data-params="waitPay" @tap="jump">
 		                    <view class="icon"><text class="iconfont icon-daifukuan"></text></view>
 		                    <view class="text">待付款</view>
-		                </navigator>
+		                </view>
 		            </view>
 		            <view class="item">
-		                <navigator  open-type="reLaunch" url="/pages/engineerPages/accepted/index?params=finished">
+		                <view data-params="finished" @tap="jump">
 		                    <view class="icon"><text class="iconfont icon-yiwancheng"></text></view>
 		                    <view class="text">已完成</view>
-		                </navigator>
+		                </view>
 		            </view>
 		        </view>
 		    </i-cell-group>
@@ -131,13 +132,11 @@
 	import cell from "../../../components/cell/index.vue"
 	import rate from "../../../components/uni-rate/uni-rate.vue"
 	import tabBar from "../../../components/tabBar/index.vue"
-	
 	export default {
 		data(){
 			return{
 				userGroup:this.$store.state.globalData.userGroup,
 				rate: 4.4,
-				starIndex: 0,
 			}
 		},
 		components:{
@@ -145,6 +144,16 @@
 			"i-cell":cell,
 			"i-rate":rate,
 			tabBar
+		},
+		methods:{
+			jump(e){
+				let self = this;
+				let pram = e.currentTarget.dataset.params;
+				self.$store.commit("setTabBarAcceptedCurrent",pram)
+				uni.switchTab({
+					url:"/pages/engineerPages/accepted/index",
+				})
+			}
 		},
 		props:{
 			

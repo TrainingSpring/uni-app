@@ -7,9 +7,9 @@
         key:属性名
         value:属性值
 	 -->
-	<view class="list i-class" :style="{'flex-direction': row?'row':'column','font-size':size+'rpx'}">
-		<view class="list-key">{{key}}</view>
-		<view class="list-value">{{value}}</view>
+	<view :class="['list',iclass]" :style="{'flex-direction': row?'row':'column','font-size':size+'px'}">
+		<view class="list-key">{{tkey}}</view>
+		<view class="list-value" v-if="row">{{value}}</view>
 		<view class="list-slot" v-if="!row">
 			<slot></slot>
 		</view>
@@ -23,11 +23,11 @@
 				default:true
 			},
 			size:{
-				default:24
+				default:12
 			},
-			key:"",
+			tkey:"",
 			value:"",
-			"i-class":""
+			"iclass":""
 		}
 	}
 </script>
@@ -35,11 +35,11 @@
 <style scoped>
 	.list{
 		display: flex;
-		padding: 42rpx 20rpx;
+		padding: 42upx 20upx;
 	}
 	.list .list-key{
 		flex: 1;
-		margin-left: 10rpx;
+		margin-left: 10upx;
 		color:#999;
 	}
 	.list .list-value{

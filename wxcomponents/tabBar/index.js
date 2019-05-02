@@ -29,19 +29,19 @@ Component({
     selectedColor: "#3cc51f",
     userGroup:app.globalData.userGroup,
     list: [{
-      pagePath: "/pages/index/index",
+      pagePath: "/pages/pages/index/index",
       icon:"icon-zhuye",
       text: "主页",
       main:false
     },
      {
-        pagePath: "/pages/logs/logs",
+        pagePath: "/pages/pages/logs/logs",
         icon:"icon-scancode",
         text: "扫一扫",
         main:true
     },
     {
-      pagePath: "/pages/my/index",
+      pagePath: "/pages/pages/my/index",
         icon:"icon-wodedangxuan",
         text: "我的",
         main:false
@@ -49,30 +49,30 @@ Component({
   ],
   engineerList:[
     {
-      pagePath: "/pages/index/index",
+      pagePath: "/pages/pages/index/index",
       icon:"icon-daijiedingdan",
       text: "待接订单",
       main:false
     },{
-      pagePath:"/engineerPages/accepted/index?params=accepted",
+      pagePath:"/pages/engineerPages/accepted/index?params=accepted",
       icon:"icon-xiuli",
       text: "已接订单",
       main:false
     },
     {
-       pagePath: "/pages/logs/logs",
+       pagePath: "/pages/pages/logs/logs",
        icon:"icon-scancode",
        text: "扫一扫",
        main:true
    },
    {
-     pagePath: "/engineerPages/allOrder/index",
+     pagePath: "/pages/engineerPages/allOrder/index",
       icon:"icon-quanbudingdan1",
       userGroup:1,
       text: "全部订单",
       main:false
     },{
-      pagePath: "/pages/my/index",
+      pagePath: "/pages/pages/my/index",
         icon:"icon-wodedangxuan",
         text: "我的",
         main:false

@@ -74,7 +74,7 @@
 				    text: "待接订单",
 				    main:false
 				  },{
-				    pagePath:"/engineerPages/accepted/index?params=accepted",
+				    pagePath:"/pages/engineerPages/accepted/index?params=accepted",
 				    icon:"icon-xiuli",
 				    text: "已接订单",
 				    main:false
@@ -86,7 +86,7 @@
 				     main:true
 				 },
 				 {
-				   pagePath: "/engineerPages/allOrder/index",
+				   pagePath: "/pages/engineerPages/allOrder/index",
 				    icon:"icon-quanbudingdan1",
 				    userGroup:1,
 				    text: "全部订单",
@@ -100,16 +100,38 @@
 				],
 			}
 		},
+		mounted() {
+			uni.hideTabBar()
+		},
 		props:["selected",],
 		methods:{
+			/**
+			 * @Author Training 
+			 * @description tabBar 跳转功能
+			 * @param {Object} e  标签参数
+			 */
 			switchTab(e) {
 			    const data = e.currentTarget.dataset;
 			    const url = data.path;
 			    uni.switchTab({ url })
 			  
 			},
+			/**
+			 * @description 扫码功能
+			 */
 			scanCode(){
-			  uni.scanCode();
+				/**
+				 * @description 调用原生扫码组件
+				 *  H5不可用   
+				 *  H5如果是放在微信公众平台
+				 *  可以调用公众平台的官方扫码api
+				 *  以获取支持
+				 * @href   https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1455871652
+				 */
+				// #ifndef H5
+					uni.scanCode();
+				// #endif
+			  
 			}
 		}
 	}

@@ -1,5 +1,5 @@
 <template>
-	<view class="tabs" :style="{'background':bgColor,'font-size':size?size+'upx':'24upx',position:fixed?'fixed':'relative'}" v-on:getCurrent="handle"
+	<view :class="['tabs',iclass]" :style="{'background':bgColor,'font-size':size?size+'upx':'24upx',position:fixed?'fixed':'relative'}" v-on:getCurrent="handle"
 	 sargetSetCurrent="targetCurrent">
 		<slot></slot>
 	</view>
@@ -13,6 +13,7 @@
 			};
 		},
 		props: {
+			iclass:"",
 			'bgColor': "",
 			'current':"",
 			'size':"",
@@ -23,6 +24,11 @@
 		},
 		mounted: function() {
 			this.channgeCurrent(this.current);
+		},
+		watch:{
+			current:function(newVal){
+				this.channgeCurrent(newVal);
+			}
 		},
 		methods: {
 			handle(data) {
@@ -68,6 +74,7 @@
 		width: 100%;
 		background: #fff;
 		padding: 20upx;
-		border-bottom: 1px solid #eee;;
+		border-bottom: 1px solid #eee;
+		z-index: 999;
 	}
 </style>

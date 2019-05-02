@@ -1,6 +1,25 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path":"pages/login/index",
+			"style":{
+				"navigationBarTitleText":"登录"
+			}
+		},
+		{
+			"path":"pages/engineerPages/accepted/index",
+			"style":{
+				"navigationBarTitleText":"已接订单",
+				"usingComponents": {
+					// #ifdef APP-PLUS || MP-WEIXIN
+					"t-tab": "/wxcomponents/tab/index",
+					"t-tabs": "/wxcomponents/tabs/index",
+					"tab-bar": "/wxcomponents/tabBar/index"
+					// #endif
+				}
+			}
+		},
+		{
 			"path":"pages/pages/my/index",
 			"style":{
 				"navigationBarTitleText":"个人中心",
@@ -121,6 +140,36 @@
 			"style":{
 				"navigationBarTitleText":"评论"
 			}
+		},
+		{
+			"path":"pages/engineerPages/allOrder/index",
+			"style":{
+				"navigationBarTitleText":"全部订单",
+				"usingComponents": {
+					// #ifdef APP-PLUS || MP-WEIXIN
+					"tab-bar": "/wxcomponents/tabBar/index"
+					// #endif
+				}
+			}
+		},
+		{
+			"path":"pages/engineerPages/getOrder/index",
+			"style":{
+				"navigationBarTitleText":"订单详情",
+				"usingComponents":{
+					// #ifdef MP-WEIXIN || APP-PLUS
+					"t-tab": "/wxcomponents/tab/index",
+					"t-tabs": "/wxcomponents/tabs/index"
+					// #endif
+				}
+			}
+		},
+		{
+			"path":"pages/engineerPages/searchPage/index",
+			"style":{
+				"navigationBarTitleText":"搜索"
+				
+			}
 		}
 		
 	],
@@ -130,7 +179,6 @@
 		"navigationBarBackgroundColor": "#FFF",
 		"backgroundColor": "#F8F8F8"
 	}
-	// #ifdef MP-WEIXIN || APP-PLUS 
 	,
 	"tabBar": {
 		"custom": true,
@@ -139,17 +187,16 @@
 				"text": "首页"
 			},
 			{
-				"pagePath": "pages/pages/index/index",
+				"pagePath": "pages/pages/my/index",
 				"text": "我的主页"
 			},
 			{
-				"pagePath": "pages/pages/index/index",
+				"pagePath": "pages/engineerPages/accepted/index",
 				"text": "已接订单"
 			}, {
-				"pagePath": "pages/pages/index/index",
+				"pagePath": "pages/engineerPages/allOrder/index",
 				"text": "全部订单"
 			}
 		]
 	}
-	// #endif
 }

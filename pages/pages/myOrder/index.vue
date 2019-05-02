@@ -216,7 +216,11 @@
 			
 		},
 		onLoad(options) {
-			this.current = options.params;
+			if(!options.params){
+				this.current = "all"
+			}else{
+				this.current = options.params;
+			}
 		},
 		methods:{
 			/**
