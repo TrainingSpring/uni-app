@@ -1,0 +1,68 @@
+/* pages/repair/index.wxss */
+image{
+  width:100%;
+  height:100%;
+}
+.repairBg{
+    background: #f4f4f4;
+    min-height: calc(100vh - 20upx);
+    padding-top: 20upx;
+}
+.repairBg .hint{
+    background: #fff;
+    text-align: center;
+    line-height: 120upx;
+    font-size:28upx;
+    height: 120upx;
+    margin-bottom: 20upx;
+}
+.repairBg .userinfo{
+    min-height: calc(100vh - 165upx);
+    background: #fff;
+    position:relative;
+}
+.repairBg .userinfo .inputHandle{
+    margin-top: 2upx;
+}
+.repairBg .userinfo .upLoadImg{
+  display: flex;
+  flex-direction: column;
+}
+.repairBg .userinfo .upLoadImg .imagesFlex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.repairBg .userinfo .upLoadImg .avatar{
+    width:150upx;
+    height: 150upx;
+    background: #e7e7e7;
+    text-align: center;
+    line-height: 150upx;
+    color: #b5b5b5;
+    margin-bottom: 20upx;
+    margin-left: 30upx;
+}
+.repairBg .userinfo .upLoadImg .avatar .iconfont{
+    font-size: 60upx !important;
+}
+.repairBg .userinfo .button{
+    width: 94.6666%;
+    height: 96upx;
+    background: #008cff;
+    text-align: center;
+    line-height: 96upx;
+    color: #fff;
+    margin-left:2.66665%;
+    margin-top: 80upx;
+    margin-bottom: 20upx;
+    font-size: 36upx;
+}
+.repairBg .userinfo .upLoadImg .videoFlex .avatar{
+    width: calc(100vw - 50upx);
+    height: 400upx;
+}
+video{
+    width: 100%;height: 100%;
+}

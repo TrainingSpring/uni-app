@@ -1,0 +1,35 @@
+/* pages/downloadFile/index.wxss */
+.download{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.download .downloadIcon{
+    padding-top: 95upx;
+    color: #f92e31;
+}
+.download .downloadIcon text{
+    font-size: 155upx;
+}
+.download .title{
+    height: 115upx;
+    font-size: 24upx;
+    color:#666;
+	margin-top: 20upx;
+}
+.download .button{
+    background: #0088ff;
+    border-radius: 44upx;
+    height: 88upx;
+    width: 400upx;
+    color: #fff;
+    text-align: center;
+    line-height: 88upx;
+    margin-top: 340upx;
+}
+.download .button .iconfont{
+    font-size: 40upx;
+    margin-right: 10upx;
+
+}

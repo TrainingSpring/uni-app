@@ -1,0 +1,155 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path":"pages/pages/my/index",
+			"style":{
+				"navigationBarTitleText":"个人中心",
+				"backgroundColor":"#fff",
+				"usingComponents": {
+					// #ifdef APP-PLUS || MP-WEIXIN
+					"tab-bar": "/wxcomponents/tabBar/index"
+					// #endif
+				}
+			}
+		},
+		{
+			"path": "pages/pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"usingComponents": {
+					// #ifdef APP-PLUS || MP-WEIXIN
+					"tab-bar": "/wxcomponents/tabBar/index"
+					// #endif
+				}
+			}
+
+		},
+		{
+			"path": "pages/pages/articleDetails/index",
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
+		},
+		{
+			"path": "pages/pages/downloadFile/index",
+			"style": {}
+		},
+		{
+			"path": "pages/pages/videoDetails/index",
+			"style": {
+				"navigationBarTitleText": "视频详情"
+			}
+		},
+		{
+			"path": "pages/pages/machineDetails/index",
+			"style": {
+				"navigationBarTitleText": "机器详情"
+			}
+		},
+		{
+			"path": "pages/pages/repair/index",
+			"style": {
+				"navigationBarTitleText": "申请维修"
+			}
+		},
+		{
+			"path": "pages/pages/record/index",
+			"style": {
+				"navigationBarTitleText": "维修记录",
+				"usingComponents": {
+					// #ifdef APP-PLUS || MP-WEIXIN
+					"list-item": "/wxcomponents/listItem/listItem/index",
+					"list-item-group": "/wxcomponents/listItem/listItem-group/index"
+					// #endif
+				}
+			}
+		},
+		{
+			"path":"pages/pages/query/index",
+			"style":{
+				 "navigationBarTitleText": "进度查询"
+			}
+		},
+		{
+			"path":"pages/pages/logs/index",
+			 "navigationBarTitleText": "日志打印"
+		},
+		{
+			"path":"pages/pages/myOrder/index",
+			"style":{
+				"navigationBarTitleText":"我的订单",
+				"usingComponents": {
+					// #ifdef APP-PLUS || MP-WEIXIN
+					"t-tab": "/wxcomponents/tab/index",
+					"t-tabs": "/wxcomponents/tabs/index"
+					// #endif
+				}
+			}
+		},
+		{
+			"path":"pages/pages/myInfo/index",
+			"style":{
+				"navigationBarTitleText":"个人信息"
+			}
+		},
+		{
+			"path":"pages/pages/myMsg/index",
+			"style":{
+				"navigationBarTitleText":"我的消息"
+			}
+		},
+		{
+			"path":"pages/pages/safety/index",
+			"style":{
+				"navigationBarTitleText":"安全中心"
+			}
+		},
+		{
+			"path":"pages/pages/settings/index",
+			"style":{
+				"navigationBarTitleText":"设置"
+			}
+		},
+		{
+			"path":"pages/pages/pay/index",
+			"style":{
+				"navigationBarTitleText":"付款"
+			}
+		},
+		{
+			"path":"pages/pages/evalute/index",
+			"style":{
+				"navigationBarTitleText":"评论"
+			}
+		}
+		
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "云绣",
+		"navigationBarBackgroundColor": "#FFF",
+		"backgroundColor": "#F8F8F8"
+	}
+	// #ifdef MP-WEIXIN || APP-PLUS 
+	,
+	"tabBar": {
+		"custom": true,
+		"list": [{
+				"pagePath": "pages/pages/index/index",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/pages/index/index",
+				"text": "我的主页"
+			},
+			{
+				"pagePath": "pages/pages/index/index",
+				"text": "已接订单"
+			}, {
+				"pagePath": "pages/pages/index/index",
+				"text": "全部订单"
+			}
+		]
+	}
+	// #endif
+}
