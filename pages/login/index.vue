@@ -38,7 +38,9 @@
 		},
 		methods: {
 			submit(){
-				
+				uni.reLaunch({
+					url:"/pages/pages/index/index"
+				})
 			}
 		}
 	}

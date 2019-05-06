@@ -31,7 +31,7 @@
 		<!-- #ifdef MP-WEIXIN -->
 			<tab-bar selected='0' />
 		<!-- #endif -->
-		<!-- #ifdef H5 -->
+		<!-- #ifndef MP-WEIXIN -->
 			<tabBar selected="0"></tabBar>
 		<!-- #endif -->
 	</view>
