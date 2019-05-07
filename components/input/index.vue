@@ -1,10 +1,10 @@
 <template>
 	<view :class="['i-class',' i-cell','i-input' ,error ? 'i-input-error' : '' ,  mode == 'wrapped' ? 'i-input-wrapped' : '' ]">
 		<view v-if=" title " class="i-cell-hd i-input-title"> {{title }}</view>
-		<textarea v-if=" type === 'textarea' " auto-height :disabled=" disabled " :focus=" autofocus " 
+		<textarea v-if=" type === 'textarea' " :value="value" auto-height :disabled=" disabled " :focus=" autofocus " 
 		 :placeholder=" placeholder " :maxlength=" maxlength " :class="['i-input-input',' i-cell-bd ', right ? 'i-input-input-right' : '' ]"
 		 placeholder-class="i-input-placeholder" @input="handleInputChange" @focus="handleInputFocus" @blur="handleInputBlur"></textarea>
-		<input v-else :type=" type " :disabled=" disabled "  :focus=" autofocus "  :placeholder=" placeholder "
+		<input v-else :type=" type " :value="value" :disabled=" disabled "  :focus=" autofocus "  :placeholder=" placeholder "
 		 :maxlength=" maxlength " :class="['i-input-input',' i-cell-bd ', right ? 'i-input-input-right' : '' ]"
 		 placeholder-class="i-input-placeholder" :name="name" @input="handleInputChange" @focus="handleInputFocus" @blur="handleInputBlur" />
 	</view>
@@ -42,6 +42,7 @@
 			error: {
 				default: false
 			},
+			value:"",
 			maxlength: "",
 			name:""
 		},
@@ -49,7 +50,7 @@
 			handleInputChange(event) {
             const { detail = {} } = event;
             const { value = '' } = detail;
-            this.$emit('change',{name:this.$props.name,value:value});
+            this.$emit('change',{name:this.$props.name,value:value,type:"change"});
         },
 
         handleInputFocus(event) {
